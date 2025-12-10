@@ -1,0 +1,21 @@
+/* default (laptop) */
+.profile-slide {
+  width: 300px;
+  height: 500px;
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .profile-slide {
+    width: 220px; /* ✅ lebih kecil */
+    height: 400px;
+  }
+}
+
+/* HP */
+@media (max-width: 480px) {
+  .profile-slide {
+    width: 210px;
+    height: 380px;
+  }
+}

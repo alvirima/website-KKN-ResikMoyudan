@@ -1,0 +1,126 @@
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.carousel-window {
+  width: 960px; /* 3 x 320 */
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.ss-card {
+  width: 300px;
+  margin: 0 10px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  flex-shrink: 0;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ss-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.ss-card h3 {
+  font-family: poppins, sans-serif;
+  margin-top: 16px;
+  font-size: 18px;
+  color: #375c3f;
+}
+
+.ss-card .desc {
+  font-family: poppins, sans-serif;
+  font-size: 12px;
+  color: #4f7355;
+  margin: 8px 0 16px;
+}
+
+.contoh {
+  font-family: poppins, sans-serif;
+  font-size: 10px;
+  color: #47663b;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2e5b3b;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.badge-wrapper {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: #f6f6f6;
+  color: #47663b;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 8px;
+  font-family: inter, sans-serif;
+  font-weight: 500;
+}
+
+/* SYARAT */
+.syarat {
+  background: #f6f6f6;
+  color: #1f4529;
+  border-radius: 5px;
+  padding: 12px;
+  text-align: left;
+  margin-top: auto;
+  font-family: poppins, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.syarat p {
+  font-family: poppins, sans-serif;
+  font-size: 10px;
+  color: #47663b;
+  margin: 4px 0 0;
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #47663b;
+}
+
+.btn.left {
+  margin-right: 16px;
+}
+
+.btn.right {
+  margin-left: 16px;
+}
+
+@media (max-width: 1180px), (-webkit-min-device-pixel-ratio: 2) {
+  .carousel-window {
+    width: 640px; /* 2 x 320 */
+  }
+}

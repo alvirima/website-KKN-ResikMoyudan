@@ -1,0 +1,148 @@
+.footer {
+  color: #f6f6f6;
+  background-color: #1f4529;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 8vw;
+  padding-top: 40px;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.footer-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 80px;
+}
+
+.footer p {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #f6f6f6;
+}
+
+.footer-content-center,
+.footer-content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+}
+
+.footer-content-right ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+@keyframes bounce-right {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(8px);
+  }
+  100% {
+    transform: translateX(6px);
+  }
+}
+
+.footer-content-right a {
+  color: #f6f6f6;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.footer-content-right a:hover {
+  color: #9ebc9e;
+  animation: bounce-right 0.3s ease;
+}
+
+.footer-content-left {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 15px;
+}
+.footer-logo {
+  width: 65px;
+  height: auto;
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-text h3 {
+  font-family: "inter", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.phone-icon {
+  width: 30px;
+  height: auto;
+}
+
+.footer-copyright {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #f6f6f6;
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1180px), (-webkit-min-device-pixel-ratio: 2) {
+  .footer-content {
+    gap: 100px;
+  }
+
+  .footer p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .footer-content-right ul {
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .footer-logo {
+    width: 50px;
+    height: auto;
+  }
+
+  .footer-text h3 {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  .phone-icon {
+    width: 25px;
+  }
+
+  .footer-copyright {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,78 @@
+/* Biar tidak ketabrak navbar */
+.hero-edukasi {
+  margin-top: 80px;
+  text-align: center;
+  padding: 32px;
+  font-family: "Inter", sans-serif;
+}
+
+/* Tabs container */
+.tabs {
+  display: flex;
+  justify-content: left;
+  gap: 40px;
+  margin: 20px 0 50px 80px;
+  background: transparent;
+}
+
+/* Tombol tab */
+.tab {
+  background: none;
+  border: none;
+  padding: 8px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #6b6b6b;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Tab aktif */
+.tab.active {
+  color: #1f4529;
+  font-weight: 600;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  background-color: #1f4529;
+  border-radius: 2px;
+}
+
+/* Panel konten */
+.panel {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.panel h2 {
+  margin-bottom: 10px;
+  color: #1f4529;
+  font-size: 45px;
+  font-weight: 700;
+  font-family: "inter", sans-serif;
+  animation: popInFromBack 0.8s ease-out 0.2s forwards;
+}
+
+@media (max-width: 1180px), (-webkit-min-device-pixel-ratio: 2) {
+  .hero-edukasi {
+    margin-top: 60px;
+  }
+
+  .tabs {
+    margin: 10px 0 50px 30px;
+  }
+
+  .tab {
+    font-size: 15px;
+  }
+
+  .panel h2 {
+    font-size: 40px;
+  }
+}

@@ -1,0 +1,83 @@
+.jenis-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.jenis-content {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+}
+
+.pie-wrapper {
+  width: 450px;
+}
+
+.legend-box {
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  font-family: "poppins", sans-serif;
+}
+
+.legend-box h3 {
+  color: #1f4529;
+  margin-bottom: 15px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.label-name {
+  width: 120px;
+  font-weight: 500;
+  color: #2d4f2b;
+}
+
+.label-value {
+  color: #2d4f2b;
+}
+
+@media (max-width: 1180px), (-webkit-min-device-pixel-ratio: 2) {
+  .jenis-container {
+    padding: 60px;
+  }
+
+  .jenis-content {
+    gap: 40px;
+  }
+
+  .legend-box {
+    padding: 30px 40px;
+  }
+
+  .legend-item {
+    margin-bottom: 5px;
+  }
+
+  .circle {
+    width: 13px;
+    height: 13px;
+  }
+
+  .label-name {
+    width: 120px;
+  }
+
+  .label-value {
+    white-space: nowrap;
+  }
+}

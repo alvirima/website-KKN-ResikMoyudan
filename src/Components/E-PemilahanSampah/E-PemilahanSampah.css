@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.pemilahan-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.pemilahan-card {
+  width: 250px;
+  text-align: center;
+}
+
+/* gambar ilustrasi sampah bawah */
+.jenis-sampah {
+  width: 250px;
+  height: auto;
+  margin: 15px auto 10px;
+  display: block;
+}
+
+.pemilahan-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d4e2d;
+  margin-bottom: 5px;
+}
+
+.pemilahan-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* belum betul */
+.isiEdukasiPemilahan h2 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 900px;
+  margin: 60px auto 50px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.card-isiEdukasiPemilahan {
+  background: #ffffff;
+  border-radius: 10px;
+  width: 1000px;
+  height: 570px;
+  padding: 30px 50px;
+  margin: 10px 90px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-isiEdukasiPemilahan h3 {
+  font-family: inter, sans-serif;
+  font-size: 21px;
+  color: #47663b;
+  text-align: justify;
+  margin-bottom: 8px;
+}
+
+.card-isiEdukasiPemilahan p {
+  font-family: inter, sans-serif;
+  font-size: 18px;
+  color: #47663b;
+  text-align: justify;
+  margin-bottom: 8px;
+}
+
+.card-isiEdukasiPemilahan ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+  text-align: justify;
+}
+
+.card-isiEdukasiPemilahan ul li {
+  font-family: inter, sans-serif;
+  font-size: 18px;
+  color: #47663b;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+@media (max-width: 1180px), (-webkit-min-device-pixel-ratio: 2) {
+  .pemilahan-wrapper {
+    gap: 50px;
+  }
+
+  .pemilahan-card {
+    width: 200px;
+  }
+
+  .jenis-sampah {
+    width: 200px;
+    margin: 25px auto 10px;
+  }
+
+  .pemilahan-card h3 {
+    font-size: 18px;
+  }
+
+  .pemilahan-card p {
+    font-size: 13px;
+  }
+
+  .isiEdukasiPemilahan h2 {
+    font-size: 25px;
+  }
+
+  .card-isiEdukasiPemilahan {
+    width: 750px;
+    height: 650px;
+    padding: 30px 50px;
+    margin: 0 5px;
+  }
+
+  .card-isiEdukasiPemilahan h3 {
+    font-size: 18px;
+  }
+
+  .card-isiEdukasiPemilahan p {
+    font-size: 17px;
+  }
+
+  .card-isiEdukasiPemilahan ul li {
+    font-size: 17px;
+  }
+}

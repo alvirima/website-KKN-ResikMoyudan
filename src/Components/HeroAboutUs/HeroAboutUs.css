@@ -1,0 +1,40 @@
+.au-container {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.au-card {
+  background: #ffffff;
+  width: 1100px;
+  height: 400px;
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.au-card p {
+  color: #47663b;
+  font-family: inter, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.au-card p ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+  text-align: justify;
+}
+
+@media (max-width: 1180px), (-webkit-min-device-pixel-ratio: 2) {
+  .au-card {
+    width: 750px;
+    height: 430px;
+  }
+
+  .au-card p {
+    font-size: 17px;
+  }
+}

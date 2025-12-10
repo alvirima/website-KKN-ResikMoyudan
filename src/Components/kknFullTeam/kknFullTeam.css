@@ -1,0 +1,11 @@
+.team {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-kkn {
+  width: 770px;
+  height: 562px;
+}
