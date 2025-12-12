@@ -61,7 +61,7 @@
   .ss-content p {
     font-size: 16.5px;
     width: 350px;
-    height: 400px;
+    height: 450px;
     padding: 30px;
     margin: 5px;
   }
@@ -69,5 +69,27 @@
   .ss-content img {
     width: 360px;
     height: 237px;
+  }
+}
+
+@media (max-width: 800px), (-webkit-min-device-pixel-ratio: 3) {
+  .ss-content {
+    flex-direction: column; /* layout vertikal */
+    align-items: center;
+    gap: 20px;
+  }
+
+  .ss-content p {
+    order: 2;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    font-size: 13px;
+  }
+
+  .ss-content img {
+    order: 1;
+    width: 90%;
+    height: auto;
   }
 }

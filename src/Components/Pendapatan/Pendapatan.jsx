@@ -44,10 +44,12 @@ const Pendapatan = () => {
   ];
 
   const [isTablet, setIsTablet] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsTablet(window.innerWidth <= 1000);
+      setIsMobile(window.innerWidth <= 800);
     };
 
     handleResize();
@@ -58,66 +60,79 @@ const Pendapatan = () => {
   return (
     <div className="chart-container">
       <div className="chart-box">
-        <ResponsiveContainer width="100%" height={isTablet ? 380 : 420}>
+        <ResponsiveContainer
+          width="100%"
+          height={isMobile ? 280 : isTablet ? 380 : 420}
+        >
           <BarChart
             data={data}
-            barCategoryGap={20}
+            barCategoryGap={isMobile ? 70 : 20}
             margin={{
-              top: 40,
-              right: isTablet ? 10 : 50,
-              left: isTablet ? 10 : 50,
-              bottom: 20,
+              top: isMobile ? 20 : 40,
+              right: isMobile ? 5 : isTablet ? 10 : 50,
+              left: isMobile ? 15 : isTablet ? 10 : 50,
+              bottom: isMobile ? 40 : 20,
             }}
           >
-            <text
-              x={isTablet ? 20 : 60}
-              y={15}
-              textAnchor="start"
-              style={{
-                fontFamily: "Inter",
-                fontSize: 16,
-                fill: "#1F4529",
-                fontWeight: 600,
-              }}
-            >
-              Rupiah
-            </text>
+            {!isMobile && (
+              <text
+                x={isTablet ? 20 : 60}
+                y={15}
+                textAnchor="start"
+                style={{
+                  fontFamily: "Inter",
+                  fontSize: 16,
+                  fill: "#1F4529",
+                  fontWeight: 600,
+                }}
+              >
+                Rupiah
+              </text>
+            )}
 
             {/* X Axis */}
             <XAxis
               dataKey="month"
-              tick={{ fontSize: isTablet ? 10 : 12 }}
+              tick={{ fontSize: isMobile ? 9 : isTablet ? 10 : 12 }}
               axisLine={false}
               tickLine={false}
               interval={0}
+              angle={isMobile ? -45 : 0}
+              textAnchor={isMobile ? "end" : "middle"}
+              height={isMobile ? 60 : 30}
             />
 
             {/* Y Axis */}
-            <YAxis
-              tickFormatter={(value) => value.toLocaleString("id-ID")}
-              tick={{ fontSize: 12 }}
-              axisLine={false}
-            />
+            {!isMobile && (
+              <YAxis
+                tickFormatter={(value) => value.toLocaleString("id-ID")}
+                tick={{ fontSize: 12 }}
+                axisLine={false}
+              />
+            )}
 
             <Tooltip
               formatter={(val) => val.toLocaleString("id-ID")}
               cursor={{ fill: "rgba(0,0,0,0.05)" }}
             />
 
-            {/* Bar dengan warna alternating */}
             <Bar
               dataKey="income"
               radius={[0, 0, 0, 0]}
-              barSize={isTablet ? 40 : 65}
+              barSize={isMobile ? 18 : isTablet ? 40 : 65} // bar lebih pendek di HP
             >
-              <LabelList
-                dataKey="income"
-                position="top"
-                formatter={(value) => value.toLocaleString("id-ID")}
-                style={{ fontSize: 12, fill: "#1F4529" }}
-              />
+              {!isMobile && (
+                <LabelList
+                  dataKey="income"
+                  position="top"
+                  formatter={(value) => value.toLocaleString("id-ID")}
+                  style={{
+                    fontSize: 12,
+                    fill: "#1F4529",
+                  }}
+                />
+              )}
 
-              {/* apply alternating color */}
               {data.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={colors[index]} />
               ))}

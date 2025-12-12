@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import "./AnggotaKKN.css";
 
 import Hannah from "../../assets/anggota-compressed/Hannah.webp";
 import Vinka from "../../assets/anggota-compressed/Vinka.webp";
@@ -110,69 +111,26 @@ const profiles = [
 
 const ProfileCard = memo(({ profile }) => {
   return (
-    <div style={styles.cardContent}>
-      <div style={styles.imageContainer}>
+    <div className="card-content">
+      <div className="image-container">
         <img
           src={profile.image}
           alt={profile.name}
-          style={styles.image}
           loading="lazy"
           decoding="async"
         />
       </div>
-      <h3 style={styles.name}>{profile.name}</h3>
-      <p style={styles.major}>{profile.major}</p>
-      <p style={styles.uni}>{profile.uni}</p>
+      <h3 className="profile-name">{profile.name}</h3>
+      <p className="profile-major">{profile.major}</p>
+      <p className="profile-uni">{profile.uni}</p>
     </div>
   );
 });
 
 export default function ProfileSlider() {
   return (
-    <div style={styles.pageContainer}>
-      <div style={styles.sliderWrapper}>
-        <style>
-          {`
-            .mySwiper {
-              width: 100%;
-              padding-top: 20px;
-              padding-bottom: 60px;
-            }
-            .swiper-slide {
-              opacity: 1;
-              transition: opacity 0.3s;
-              will-change: transform; 
-              transform-style: preserve-3d;
-            }
-            .swiper-pagination-bullet-active {
-              background-color: #1b4d3e !important;
-            }
-            .slider-arrow {
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-              z-index: 20;
-              width: 40px;
-              height: 40px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              cursor: pointer;
-              color: #1b4d3e;
-            }
-            .slider-arrow::after {
-              font-size: 20px !important;
-              font-weight: bold;
-            }
-            .custom-prev { left: -60px; }
-            .custom-next { right: -60px; }
-            @media (max-width: 768px) {
-               .custom-prev { left: 0px; }
-               .custom-next { right: 0px; }
-            }
-          `}
-        </style>
-
+    <div className="profile-slider-container">
+      <div className="slider-wrapper">
         <div className="slider-arrow custom-prev swiper-button-prev"></div>
         <div className="slider-arrow custom-next swiper-button-next"></div>
 
@@ -202,7 +160,7 @@ export default function ProfileSlider() {
           className="mySwiper"
         >
           {profiles.map((profile) => (
-            <SwiperSlide key={profile.id} style={styles.slideCard}>
+            <SwiperSlide key={profile.id} className="profile-slide">
               <ProfileCard profile={profile} />
             </SwiperSlide>
           ))}
@@ -211,69 +169,3 @@ export default function ProfileSlider() {
     </div>
   );
 }
-
-const styles = {
-  pageContainer: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontFamily: "'Poppins', sans-serif",
-    overflow: "hidden",
-  },
-  sliderWrapper: {
-    width: "100%",
-    maxWidth: "878px", // Adjusted maxWidth for better responsiveness
-    padding: "0 20px",
-    position: "relative",
-  },
-  slideCard: {
-    width: "300px",
-    height: "500px",
-  },
-  cardContent: {
-    backgroundColor: "white",
-    borderRadius: "15px",
-    boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
-    padding: "20px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    textAlign: "center",
-    border: "1px solid #eaeaea",
-    height: "100%",
-    transform: "translateZ(0)",
-    willChange: "transform",
-  },
-  imageContainer: {
-    width: "100%",
-    height: "300px",
-    marginBottom: "15px",
-    borderRadius: "10px",
-    overflow: "hidden",
-    backgroundColor: "#f0f0f0",
-  },
-  image: {
-    width: "100%",
-    //height: "110%"
-    height: "100%",
-    objectFit: "cover",
-  },
-  name: {
-    fontSize: "21px",
-    fontWeight: "700",
-    color: "#1F4529",
-    margin: "10px 0 5px 0",
-  },
-  major: {
-    fontSize: "18px",
-    fontWeight: "600",
-    color: "#4F7355",
-    margin: "0",
-  },
-  uni: {
-    fontSize: "16px",
-    fontWeight: "400",
-    color: "#4F7355",
-    marginTop: "4px",
-  },
-};

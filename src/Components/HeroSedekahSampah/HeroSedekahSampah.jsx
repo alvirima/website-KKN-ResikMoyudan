@@ -15,7 +15,7 @@ const HeroSedekahSampah = () => {
             penjualan sampah tersebut disalurkan ke kas desa atau masjid untuk
             mendukung kegiatan sosial dan pembangunan lingkungan, sekaligus
             kontribusi dalam pengurangan sampah melalui pemilahan dan daur
-            ulang, serta menciptakan ampak positif bagi pelestarian lingkungan
+            ulang, serta menciptakan dampak positif bagi pelestarian lingkungan.
           </p>
           <img src={fotoSedekahSampah} alt="" />
         </div>

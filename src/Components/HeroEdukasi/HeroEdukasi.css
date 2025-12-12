@@ -76,3 +76,18 @@
     font-size: 40px;
   }
 }
+
+@media (max-width: 800px), (-webkit-min-device-pixel-ratio: 3) {
+  .tabs {
+    white-space: nowrap;
+    margin: 5px 0 50px 30px;
+  }
+
+  .tab {
+    font-size: 13px;
+  }
+
+  .panel h2 {
+    font-size: 35px;
+  }
+}

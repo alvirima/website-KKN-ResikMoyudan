@@ -28,6 +28,7 @@
   min-height: 480px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .ss-card img {
@@ -109,6 +110,12 @@
   font-size: 32px;
   cursor: pointer;
   color: #47663b;
+  transition: opacity 0.3s ease;
+}
+
+.btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
 .btn.left {
@@ -119,8 +126,48 @@
   margin-left: 16px;
 }
 
-@media (max-width: 1180px), (-webkit-min-device-pixel-ratio: 2) {
+@media (max-width: 1000px) {
   .carousel-window {
-    width: 640px; /* 2 x 320 */
+    width: 640px;
+  }
+}
+
+/* Mobile */
+/* Mobile */
+@media (max-width: 768px) {
+  .carousel {
+    margin-top: 40px;
+  }
+
+  .carousel-window {
+    width: 320px; /* 1 card only */
+  }
+
+  .ss-card {
+    width: 300px;
+    min-height: 500px;
+  }
+
+  .btn {
+    font-size: 24px;
+  }
+
+  .btn.left {
+    margin-right: 8px;
+  }
+
+  .btn.right {
+    margin-left: 8px;
+  }
+}
+
+/* Small Mobile (optional) */
+@media (max-width: 480px) {
+  .carousel-window {
+    width: 280px;
+  }
+
+  .ss-card {
+    width: 260px;
   }
 }

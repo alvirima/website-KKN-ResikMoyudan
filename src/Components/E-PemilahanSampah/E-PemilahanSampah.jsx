@@ -45,17 +45,17 @@ const Pemilahan = () => {
           </p>
           <ul>
             <li>
-              <strong>Sampah Organik:</strong>Berasal dari makhluk hidup
+              <strong>Sampah Organik: </strong>Berasal dari makhluk hidup
               (contoh: sisa makanan, daun). Sampah ini mudah membusuk dan dapat
               diolah lebih lanjut menjadi kompos atau pakan ternak
             </li>
             <li>
-              <strong>Sampah Anorganik:</strong>Berasal dari bahan non-hayati
+              <strong>Sampah Anorganik: </strong>Berasal dari bahan non-hayati
               (contoh: plastik, kertas, kaca, logam). Sampah ini sulit terurai
               tetapi dapat didaur ulang atau digunakan kembali.
             </li>
             <li>
-              <strong>Sampah B3 (Bahan Berbahaya & Beracun)</strong>Mengandung
+              <strong>Sampah B3 (Bahan Berbahaya & Beracun): </strong>Mengandung
               bahan kimia berbahaya (contoh: baterai, lampu neon, obat
               kadaluarsa, elektronik rusak). Sampah ini memerlukan panenganan
               khusus dan tidak boleh dicampur dengan sampah rumah tangga biasa
@@ -69,17 +69,17 @@ const Pemilahan = () => {
           </p>
           <ul>
             <li>
-              <strong>Reduce (Kurangi):</strong>Mengurangi jumlah sampah dari
+              <strong>Reduce (Kurangi): </strong>Mengurangi jumlah sampah dari
               sumbernya. Contoh: Membawa tas belanja sendiri dan menghindari
               barang sekali pakai.
             </li>
             <li>
-              <strong>Reuse (Gunakan Kembali):</strong>Memanfaatkan kembali
+              <strong>Reuse (Gunakan Kembali): </strong>Memanfaatkan kembali
               barang-barang yang masih bisa dipakai sebelum akhirnya dibuang.
               Contoh: Menggunakan botol kaca bekas sebagai penyimppanan.
             </li>
             <li>
-              <strong>Recycle (Daur Ulang):</strong>Mengolah kembali sampah
+              <strong>Recycle (Daur Ulang): </strong>Mengolah kembali sampah
               menjadi bahan baku atau produk baru. Contoh: Mendaur ulang kertas
               bekas dan botol plastik.
             </li>

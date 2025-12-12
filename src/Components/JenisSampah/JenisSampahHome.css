@@ -81,3 +81,33 @@
     white-space: nowrap;
   }
 }
+
+@media (max-width: 800px), (-webkit-min-device-pixel-ratio: 3) {
+  .jenis-content {
+    display: grid;
+  }
+
+  .legend-box {
+    padding: 20px 30px;
+    margin: 20px 80px;
+    width: 65%;
+  }
+
+  .legend-box h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .circle {
+    width: 10px;
+    height: 10px;
+  }
+
+  .label-name {
+    font-size: 13px;
+  }
+
+  .label-value {
+    font-size: 13px;
+  }
+}

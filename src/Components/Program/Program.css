@@ -87,3 +87,15 @@ button {
     font-size: 12px;
   }
 }
+
+@media (max-width: 800px), (-webkit-min-device-pixel-ratio: 3) {
+  .program-card {
+    display: grid;
+    gap: 10px;
+  }
+
+  .card {
+    width: 80%;
+    margin: 10px 0 0 40px;
+  }
+}

@@ -36,15 +36,26 @@ const data = [
   },
 ];
 
-const CARD_WIDTH = 320;
-
 const SampahDiterima = () => {
   const [index, setIndex] = useState(0);
   const [visibleCard, setVisibleCard] = useState(3);
+  const [cardWidth, setCardWidth] = useState(320);
 
   useEffect(() => {
     const handleResize = () => {
-      setVisibleCard(window.innerWidth <= 1000 ? 2 : 3);
+      if (window.innerWidth <= 480) {
+        setVisibleCard(1);
+        setCardWidth(280); // Small mobile
+      } else if (window.innerWidth <= 768) {
+        setVisibleCard(1);
+        setCardWidth(320); // Mobile
+      } else if (window.innerWidth <= 1000) {
+        setVisibleCard(2);
+        setCardWidth(320); // Tablet
+      } else {
+        setVisibleCard(3);
+        setCardWidth(320); // Desktop
+      }
       setIndex(0);
     };
 
@@ -67,14 +78,14 @@ const SampahDiterima = () => {
 
   return (
     <div className="carousel">
-      <button className="btn left" onClick={prev}>
+      <button className="btn left" onClick={prev} disabled={index === 0}>
         ❮
       </button>
 
       <div className="carousel-window">
         <div
           className="carousel-track"
-          style={{ transform: `translateX(-${index * 320}px)` }}
+          style={{ transform: `translateX(-${index * cardWidth}px)` }}
         >
           {data.map((item, i) => (
             <div className="ss-card" key={i}>
@@ -103,7 +114,11 @@ const SampahDiterima = () => {
         </div>
       </div>
 
-      <button className="btn right" onClick={next}>
+      <button
+        className="btn right"
+        onClick={next}
+        disabled={index >= data.length - visibleCard}
+      >
         ❯
       </button>
     </div>

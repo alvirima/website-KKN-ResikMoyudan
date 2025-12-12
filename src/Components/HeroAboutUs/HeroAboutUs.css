@@ -38,3 +38,16 @@
     font-size: 17px;
   }
 }
+
+@media (max-width: 800px), (-webkit-min-device-pixel-ratio: 3) {
+  .au-card {
+    width: 90%;
+    height: 750px;
+    padding: 30px;
+    margin: 30px 0 5px 0;
+  }
+
+  .au-card p {
+    font-size: 16px;
+  }
+}

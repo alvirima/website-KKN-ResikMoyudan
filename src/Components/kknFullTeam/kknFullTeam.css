@@ -9,3 +9,10 @@
   width: 770px;
   height: 562px;
 }
+
+@media (max-width: 800px), (-webkit-min-device-pixel-ratio: 3) {
+  .img-kkn {
+    width: 100%;
+    height: auto;
+  }
+}

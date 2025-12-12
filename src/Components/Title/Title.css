@@ -69,3 +69,18 @@
     font-size: 14px;
   }
 }
+
+@media (max-width: 800px), (-webkit-min-device-pixel-ratio: 3) {
+  .title h1 {
+    font-size: 30px;
+  }
+
+  .title2 {
+    font-size: 25px;
+  }
+
+  .title p {
+    font-size: 10.5px;
+    margin: 10px 25px;
+  }
+}
