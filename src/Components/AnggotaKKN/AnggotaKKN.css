@@ -104,8 +104,16 @@
   color: #1b4d3e;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  width: 48px;
+  height: 48px;
+  scale: 1.5;
+  font-weight: bold;
+}
+
 .slider-arrow::after {
-  font-size: 20px !important;
+  font-size: 30px !important;
   font-weight: bold;
 }
 
@@ -173,7 +181,7 @@
   }
 
   .slider-arrow::after {
-    font-size: 16px !important;
+    font-size: 50px !important;
   }
 
   .profile-slide {
