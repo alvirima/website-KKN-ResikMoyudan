@@ -4,6 +4,9 @@ import SampahKaleng from "../../assets/SampahKaleng.png";
 import SampahPlastik from "../../assets/SampahPlastik.png";
 import SampahKardus from "../../assets/SampahKardus.png";
 import SampahBesi from "../../assets/SampahBesi.png";
+import SampahMinyak from "../../assets/SampahMinyak.png";
+import SampahKaca from "../../assets/SampahKaca.png";
+import SampahGalon from "../../assets/SampahGalon.png";
 
 const data = [
   {
@@ -32,6 +35,27 @@ const data = [
     title: "Besi",
     desc: "Semua jenis besi bekas dapat disedekahkan",
     contoh: ["kompor", "Panci & Wajan"],
+    syarat: "Berish, tidak ada isi",
+  },
+  {
+    img: SampahMinyak,
+    title: "Minyak Jelantah",
+    desc: "Semua minyak jelantah dapat disedekahkan",
+    contoh: ["minyak bekas memasak"],
+    syarat: "Tidak ada syarat khusus",
+  },
+  {
+    img: SampahKaca,
+    title: "Botol Kaca",
+    desc: "Semua jenis botol kaca bekas dapat disedekahkan",
+    contoh: ["botol marjan", "botol minuman"],
+    syarat: "Berish, tidak ada isi",
+  },
+  {
+    img: SampahGalon,
+    title: "Galon",
+    desc: "Semua jenis galon bekas dapat disedekahkan",
+    contoh: ["galon aqua", "galon leminerale"],
     syarat: "Berish, tidak ada isi",
   },
 ];

@@ -1,19 +1,12 @@
 import { memo } from "react";
-import {
-  Swiper,
-  SwiperSlide,
-} from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import {
-  EffectCoverflow,
-  Pagination,
-  Navigation,
-} from "swiper/modules";
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import "./AnggotaKKN.css";
 
 import Hannah from "../../assets/anggota-compressed/Hannah.webp";
@@ -127,12 +120,8 @@ const ProfileCard = memo(({ profile }) => {
           decoding="async"
         />
       </div>
-      <h3 className="profile-name">
-        {profile.name}
-      </h3>
-      <p className="profile-major">
-        {profile.major}
-      </p>
+      <h3 className="profile-name">{profile.name}</h3>
+      <p className="profile-major">{profile.major}</p>
       <p className="profile-uni">{profile.uni}</p>
     </div>
   );
@@ -143,18 +132,12 @@ export default function ProfileSlider() {
     <div className="profile-slider-container">
       <div className="slider-wrapper">
         <div className="slider-arrow custom-prev swiper-button-prev">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 256 512"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
             <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
           </svg>
         </div>
         <div className="slider-arrow custom-next swiper-button-next">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 256 512"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
             <path d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
           </svg>
         </div>
@@ -181,18 +164,11 @@ export default function ProfileSlider() {
           watchSlidesProgress={true}
           observer={true}
           observeParents={true}
-          modules={[
-            EffectCoverflow,
-            Pagination,
-            Navigation,
-          ]}
+          modules={[EffectCoverflow, Pagination, Navigation]}
           className="mySwiper"
         >
           {profiles.map((profile) => (
-            <SwiperSlide
-              key={profile.id}
-              className="profile-slide"
-            >
+            <SwiperSlide key={profile.id} className="profile-slide">
               <ProfileCard profile={profile} />
             </SwiperSlide>
           ))}

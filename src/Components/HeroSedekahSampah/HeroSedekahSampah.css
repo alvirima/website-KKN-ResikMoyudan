@@ -1,6 +1,7 @@
 .ss-container {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 20px 80px;
 }
@@ -8,21 +9,23 @@
 .ss-content {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
   animation: fadeInUp 0.7s ease-out;
 }
 
 .ss-content p {
   font-family: inter, sans-serif;
   font-size: 21px;
-  font-weight: medium;
   color: #47663b;
   background: #ffffff;
   border-radius: 10px;
   text-align: justify;
   line-height: 1.4;
   width: 650px;
-  height: 363px;
+  min-height: 363px;
   padding: 40px;
   margin: 5px 0 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -31,11 +34,9 @@
 .ss-content img {
   width: 443px;
   height: 320px;
-  margin: 0;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 0.7s ease-out;
 }
 
 @keyframes fadeInUp {
@@ -49,7 +50,7 @@
   }
 }
 
-@media (max-width: 1180px), (-webkit-min-device-pixel-ratio: 2) {
+@media (max-width: 1180px) {
   .ss-container {
     padding: 20px 40px;
   }
@@ -61,9 +62,8 @@
   .ss-content p {
     font-size: 16.5px;
     width: 350px;
-    height: 450px;
+    min-height: 450px;
     padding: 30px;
-    margin: 5px;
   }
 
   .ss-content img {
@@ -72,24 +72,30 @@
   }
 }
 
-@media (max-width: 800px), (-webkit-min-device-pixel-ratio: 3) {
+@media (max-width: 800px) {
+  .ss-container {
+    padding: 20px 20px;
+    justify-content: center; /* tetap tengah */
+  }
+
   .ss-content {
     flex-direction: column; /* layout vertikal */
-    align-items: center;
     gap: 20px;
+    text-align: center;
+    max-width: 100%; /* biar full hp */
   }
 
   .ss-content p {
-    order: 2;
     width: 100%;
-    height: auto;
     padding: 20px;
-    font-size: 13px;
+    min-height: auto;
+    font-size: 14px;
+    order: 2;
   }
 
   .ss-content img {
-    order: 1;
     width: 90%;
     height: auto;
+    order: 1;
   }
 }

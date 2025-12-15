@@ -20,6 +20,18 @@
   text-transform: none;
   opacity: 0;
   transform: scale(0.9);
+  padding: 0 20px;
+}
+
+.title3 {
+  font-family: "inter", sans-serif;
+  font-size: 45px;
+  font-weight: 600;
+  color: #1f4529;
+  text-transform: none;
+  opacity: 0;
+  transform: scale(0.9);
+  padding: 0 20px;
 }
 
 .title p {
@@ -39,6 +51,25 @@
 .title p {
   opacity: 0;
   transform: scale(0.9);
+}
+
+.quote-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 20px;
+  margin: 2rem 0;
+}
+
+.quote-text {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 1000px;
+  margin: 0;
+  font-style: italic;
+  font-family: "Poppins", sans-serif;
+  color: #2d4f2b;
 }
 
 .animate {
@@ -77,10 +108,51 @@
 
   .title2 {
     font-size: 25px;
+    //margin-top: -70px !important;
+  }
+
+  .title3 {
+    font-size: 25px;
+    // margin-top: -150px !important;
   }
 
   .title p {
     font-size: 10.5px;
     margin: 10px 25px;
+  }
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 768px) {
+  .quote-text {
+    font-size: 0.85rem;
+    padding: 0 20px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+  .quote-container {
+    margin: 0 0;
+    padding: 0 20px;
+    margin-top: -55px !important;
+  }
+
+  .quote-text {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    padding: 0 10px;
+    margin-top: 15px;
+  }
+
+  .title3 {
+    font-size: 25px;
+    margin-top: -150px !important;
+  }
+
+  .title {
+    font-size: 25px;
+    margin-top: -50px !important;
+    padding: 0 20px;
   }
 }

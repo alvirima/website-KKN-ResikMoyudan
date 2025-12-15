@@ -21,8 +21,15 @@ const AboutUs = () => {
         <DosenPembimbing />
       </div>
       <div>
-        <Title title2="Anggota KKN Tematik UIN Sunan Kalijaga" />
+        <Title title3="Anggota KKN Tematik UIN Sunan Kalijaga" />
         <AnggotaKKN />
+      </div>
+      <div className="quote-container">
+        <p className="quote-text">
+          “Melalui Resik Moyudan, kami percaya bahwa perubahan besar bisa
+          dimulai dari tindakan kecil seperti memungut, memilah, dan
+          menyedekahkan sampah untuk keberkahan bersama.”
+        </p>
       </div>
     </div>
   );

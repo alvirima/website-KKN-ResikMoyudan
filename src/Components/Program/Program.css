@@ -39,6 +39,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px auto;
+  margin-top: 20px;
 }
 
 h2 {
@@ -68,8 +69,8 @@ button {
 
 @media (max-width: 1180px), (-webkit-min-device-pixel-ratio: 2) {
   .card {
-    width: 350px;
-    height: 390px;
+    max-width: 350px;
+    max-height: 390px;
     padding: 15px;
   }
 
@@ -77,6 +78,7 @@ button {
     width: 90px;
     height: 90px;
     margin: 0 auto 15px auto;
+    margin-top: 20px;
   }
 
   h2 {
@@ -91,11 +93,26 @@ button {
 @media (max-width: 800px), (-webkit-min-device-pixel-ratio: 3) {
   .program-card {
     display: grid;
-    gap: 10px;
+    gap: 15px;
   }
 
   .card {
     width: 80%;
     margin: 10px 0 0 40px;
+  }
+
+  .icon-prog {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px auto;
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 12px;
   }
 }

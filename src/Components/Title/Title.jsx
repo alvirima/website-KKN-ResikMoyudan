@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./Title.css";
 
-const Title = ({ title, title2, subTitle }) => {
+const Title = ({ title, title2, title3, subTitle, quote }) => {
   const ref = useRef();
 
   useEffect(() => {
@@ -26,7 +26,16 @@ const Title = ({ title, title2, subTitle }) => {
     <div className="title" ref={ref}>
       <h1 className="anim">{title}</h1>
       <h2 className="title2 anim">{title2}</h2>
+
+      {title3 && <h3 className="title3 anim">{title3}</h3>}
+
       <p className="anim">{subTitle}</p>
+
+      {quote && (
+        <div className="quote-container anim">
+          <p className="quote-text">{quote}</p>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import "./HeroAboutUs.css";
 
 const HeroAboutUs = () => {
