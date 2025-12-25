@@ -126,7 +126,7 @@
 }
 
 /* ============= TABLET ============= */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .slider-wrapper {
     padding: 0 60px;
   }
@@ -162,7 +162,7 @@
 }
 
 /* ============= MOBILE ============= */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .slider-wrapper {
     padding: 0 50px;
   }

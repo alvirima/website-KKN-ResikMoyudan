@@ -102,7 +102,7 @@ const profiles = [
   },
   {
     id: 12,
-    name: "Hannah Khairunnisa F.",
+    name: "Hannah Khairunnisa Filzah",
     major: "Informatika",
     uni: "UIN Sunan Kalijaga",
     image: Hannah,
