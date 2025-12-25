@@ -67,6 +67,7 @@ button {
   cursor: pointer;
 }
 
+/* Tablet */
 @media (max-width: 1180px), (-webkit-min-device-pixel-ratio: 2) {
   .card {
     max-width: 350px;
@@ -90,15 +91,21 @@ button {
   }
 }
 
+/* Mobile */
 @media (max-width: 800px), (-webkit-min-device-pixel-ratio: 3) {
   .program-card {
     display: grid;
     gap: 15px;
+    width: 100%;
+    padding: 0 10px;
   }
 
   .card {
-    width: 80%;
-    margin: 10px 0 0 40px;
+    width: 90%;
+    max-width: 320px;
+    margin: 10px auto;
+    padding: 15px;
+    height: auto;
   }
 
   .icon-prog {
@@ -113,6 +120,13 @@ button {
   }
 
   p {
-    font-size: 12px;
+    font-size: 11px;
+    margin-bottom: 30px;
+  }
+
+  button {
+    font-size: 10px;
+    padding: 8px 16px;
+    margin-bottom: 15px;
   }
 }

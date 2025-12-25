@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Pengumpulan.css";
+import "../Pendapatan/Bar.css";
 import {
   BarChart,
   Bar,
@@ -56,27 +56,36 @@ const Pengumpulan = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const getBarSize = () => {
+    if (isMobile) {
+      return Math.max(18, window.innerWidth / 15);
+    }
+    if (isTablet) {
+      return Math.max(40, window.innerWidth / 10);
+    }
+    return 75;
+  };
+
   return (
     <div className="chart-container">
       <div className="chart-box">
         <ResponsiveContainer
-          w
           width="100%"
-          height={isMobile ? 280 : isTablet ? 380 : 420}
+          height={isMobile ? 260 : isTablet ? 360 : 400} // Diperkecil
         >
           <BarChart
             data={data}
-            barCategoryGap={isMobile ? 70 : 20}
+            barGap={isMobile ? 2 : 5}
             margin={{
-              top: isMobile ? 20 : 40,
-              right: isMobile ? 5 : isTablet ? 10 : 50,
-              left: isMobile ? 15 : isTablet ? 10 : 50,
-              bottom: isMobile ? 40 : 20,
+              top: isMobile ? 10 : 30,
+              right: isMobile ? 5 : isTablet ? 5 : 30, // Diperkecil
+              left: isMobile ? 10 : isTablet ? 5 : 30, // Diperkecil
+              bottom: isMobile ? 30 : 20, // Diperkecil
             }}
           >
             {!isMobile && (
               <text
-                x={isTablet ? 20 : 60}
+                x={isTablet ? 20 : 50}
                 y={15}
                 textAnchor="start"
                 style={{
@@ -93,13 +102,14 @@ const Pengumpulan = () => {
             {/* X Axis */}
             <XAxis
               dataKey="month"
-              tick={{ fontSize: isMobile ? 9 : isTablet ? 10 : 12 }}
+              tick={{ fontSize: isMobile ? 8 : isTablet ? 10 : 12 }}
               axisLine={false}
               tickLine={false}
               interval={0}
               angle={isMobile ? -45 : 0}
               textAnchor={isMobile ? "end" : "middle"}
               height={isMobile ? 60 : 30}
+              tickMargin={isMobile ? 5 : 10} // Menyusutkan jarak label ke bar
             />
 
             {/* Y Axis */}
@@ -116,11 +126,10 @@ const Pengumpulan = () => {
               cursor={{ fill: "rgba(0,0,0,0.05)" }}
             />
 
-            {/* Bar dengan warna alternating */}
             <Bar
               dataKey="total"
               radius={[0, 0, 0, 0]}
-              barSize={isMobile ? 18 : isTablet ? 40 : 65}
+              barSize={getBarSize()} // Dinamis
             >
               {!isMobile && (
                 <LabelList
@@ -134,7 +143,6 @@ const Pengumpulan = () => {
                 />
               )}
 
-              {/* apply alternating color */}
               {data.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={colors[index]} />
               ))}

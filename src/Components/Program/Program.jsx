@@ -28,9 +28,8 @@ const Program = () => {
           </div>
           <h2>Sedekah Sampah</h2>
           <p>
-            Akses statistik lengkap mengenai perkembangan <br /> program sedekah
-            sampah, termasuk volume <br /> sampah terkelola dan penyaluran dana
-            sosial.
+            Akses statistik lengkap mengenai perkembangan program sedekah
+            sampah, termasuk volume sampah terkelola dan penyaluran dana sosial.
           </p>
           <Link to="/SedekahSampah">
             <button>Selengkapnya</button>

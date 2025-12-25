@@ -62,25 +62,20 @@ const data = [
 
 const SampahDiterima = () => {
   const [index, setIndex] = useState(0);
-  const [visibleCard, setVisibleCard] = useState(3);
-  const [cardWidth, setCardWidth] = useState(320);
+  const [cardsPerView, setCardsPerView] = useState(3); // Default desktop
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 480) {
-        setVisibleCard(1);
-        setCardWidth(280); // Small mobile
+        setCardsPerView(1);
       } else if (window.innerWidth <= 768) {
-        setVisibleCard(1);
-        setCardWidth(320); // Mobile
+        setCardsPerView(1);
       } else if (window.innerWidth <= 1000) {
-        setVisibleCard(2);
-        setCardWidth(320); // Tablet
+        setCardsPerView(2);
       } else {
-        setVisibleCard(3);
-        setCardWidth(320); // Desktop
+        setCardsPerView(3);
       }
-      setIndex(0);
+      setIndex(0); // Reset index when screen size changes
     };
 
     handleResize();
@@ -89,7 +84,7 @@ const SampahDiterima = () => {
   }, []);
 
   const next = () => {
-    if (index < data.length - visibleCard) {
+    if (index < data.length - cardsPerView) {
       setIndex(index + 1);
     }
   };
@@ -105,19 +100,16 @@ const SampahDiterima = () => {
       <button className="btn left" onClick={prev} disabled={index === 0}>
         ❮
       </button>
-
       <div className="carousel-window">
         <div
           className="carousel-track"
-          style={{ transform: `translateX(-${index * cardWidth}px)` }}
+          style={{ transform: `translateX(-${(index * 100) / cardsPerView}%)` }}
         >
           {data.map((item, i) => (
             <div className="ss-card" key={i}>
               <img src={item.img} alt={item.title} />
-
               <h3>{item.title}</h3>
               <p className="desc">{item.desc}</p>
-
               <div className="contoh">
                 <span className="label">Contoh:</span>
                 <div className="badge-wrapper">
@@ -128,7 +120,6 @@ const SampahDiterima = () => {
                   ))}
                 </div>
               </div>
-
               <div className="syarat">
                 <span className="label">Syarat Penerimaan:</span>
                 <p>{item.syarat}</p>
@@ -137,11 +128,10 @@ const SampahDiterima = () => {
           ))}
         </div>
       </div>
-
       <button
         className="btn right"
         onClick={next}
-        disabled={index >= data.length - visibleCard}
+        disabled={index >= data.length - cardsPerView}
       >
         ❯
       </button>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Pendapatan.css";
+import "./Bar.css";
 import {
   BarChart,
   Bar,
@@ -27,7 +27,6 @@ const Pendapatan = () => {
     { month: "Desember", income: 95000 },
   ];
 
-  // warna bar bergantian (gelap–terang persis Figma)
   const colors = [
     "#466C4B",
     "#9EBC9E",
@@ -57,26 +56,36 @@ const Pendapatan = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const getBarSize = () => {
+    if (isMobile) {
+      return Math.max(18, window.innerWidth / 15); // Minimum 18px, maksimum 1/15 lebar layar
+    }
+    if (isTablet) {
+      return Math.max(40, window.innerWidth / 10);
+    }
+    return 75;
+  };
+
   return (
     <div className="chart-container">
       <div className="chart-box">
         <ResponsiveContainer
           width="100%"
-          height={isMobile ? 280 : isTablet ? 380 : 420}
+          height={isMobile ? 260 : isTablet ? 360 : 400}
         >
           <BarChart
             data={data}
-            barCategoryGap={isMobile ? 70 : 20}
+            barGap={isMobile ? 2 : 5}
             margin={{
-              top: isMobile ? 20 : 40,
-              right: isMobile ? 5 : isTablet ? 10 : 50,
-              left: isMobile ? 15 : isTablet ? 10 : 50,
-              bottom: isMobile ? 40 : 20,
+              top: isMobile ? 10 : 30,
+              right: isMobile ? 5 : isTablet ? 5 : 30,
+              left: isMobile ? 10 : isTablet ? 5 : 30,
+              bottom: isMobile ? 30 : 20,
             }}
           >
             {!isMobile && (
               <text
-                x={isTablet ? 20 : 60}
+                x={isTablet ? 20 : 50}
                 y={15}
                 textAnchor="start"
                 style={{
@@ -93,7 +102,7 @@ const Pendapatan = () => {
             {/* X Axis */}
             <XAxis
               dataKey="month"
-              tick={{ fontSize: isMobile ? 9 : isTablet ? 10 : 12 }}
+              tick={{ fontSize: isMobile ? 8 : isTablet ? 10 : 12 }}
               axisLine={false}
               tickLine={false}
               interval={0}
@@ -119,7 +128,7 @@ const Pendapatan = () => {
             <Bar
               dataKey="income"
               radius={[0, 0, 0, 0]}
-              barSize={isMobile ? 18 : isTablet ? 40 : 65} // bar lebih pendek di HP
+              barSize={getBarSize()} // Dinamis
             >
               {!isMobile && (
                 <LabelList
